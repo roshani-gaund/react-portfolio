@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts (use system by default). You can add Google Fonts if you like. */
+:root {
+  --radius: 16px;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply text-slate-800; }
+}
+
+@layer components {
+  .container-lg { @apply max-w-5xl mx-auto px-4; }
+  .card { @apply bg-white rounded-2xl shadow-soft p-5; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm bg-slate-100; }
+  .btn-primary { @apply inline-flex items-center gap-2 rounded-full px-4 py-2 bg-brand text-white hover:opacity-90 transition; }
+  .btn-outline { @apply inline-flex items-center gap-2 rounded-full px-4 py-2 border border-slate-300 hover:bg-slate-100 transition; }
+  .section-title { @apply text-2xl font-bold tracking-tight mb-6; }
+}
