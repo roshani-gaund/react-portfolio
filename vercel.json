@@ -1,5 +1,16 @@
 {
-  "framework": "vite",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist"
-}
+    "version": 2,
+    "builds": [
+      {
+        "src": "App.jsx",
+        "use": "@vercel/node",
+        "config": { "includeFiles": ["dist/**"] }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "App.jsx"
+      }
+    ]
+  }
