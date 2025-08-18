@@ -1,23 +1,47 @@
-import React from "react";
+
 import Section from "./Section";
 import Card from "./Card";
 import { profile } from "../data/content";
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
-  const handleSubmit = (e) => {
+   const form = useRef();
+
+  const sendEmail = (e) => {
     e.preventDefault();
-    alert("This is a static demo. Connect to a backend or use Formspree/EmailJS to receive messages.");
+
+    emailjs
+      .sendForm(
+        "service_bqzjy0k",   // 🔹 Replace with EmailJS Service ID
+        "template_dfbg07h",  // 🔹 Replace with EmailJS Template ID
+        form.current,
+        "WAKJ8IPw3AtLZ33Me"    // 🔹 Replace with EmailJS Public Key
+      )
+      .then(
+        (result) => {
+          alert("✅ Message Sent Successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          alert("❌ Failed to send: " + error.text);
+        }
+      );
   };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   alert("This is a static demo. Connect to a backend or use Formspree/EmailJS to receive messages.");
+  // };
   return (
     <Section id="contact" title="Connect With Me">
       <div className="grid md:grid-cols-2 gap-5">
         <Card>
-          <form onSubmit={handleSubmit} className="grid gap-3">
+          <form ref={form} onSubmit={sendEmail}  className="grid gap-3">
             <input className="border rounded-xl px-3 py-2" placeholder="Name" required />
             <input type="email" className="border rounded-xl px-3 py-2" placeholder="Email" required />
             <input className="border rounded-xl px-3 py-2" placeholder="Subject" />
             <textarea rows="4" className="border rounded-xl px-3 py-2" placeholder="Message"></textarea>
-            <button className="btn-primary w-max">Send Message</button>
+            <button className="btn-primary w-max" type="submit">Send Message</button>
           </form>
         </Card>
         <Card>
