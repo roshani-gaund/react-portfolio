@@ -1,0 +1,17 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "App.jsx",
+        "use": "@vercel/node",
+        "config": { "includeFiles": ["dist/**"] }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "App.jsx"
+      }
+    ]
+  }
+  
