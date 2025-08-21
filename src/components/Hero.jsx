@@ -18,7 +18,7 @@ export default function Hero() {
           <p className="mt-2 text-brand font-semibold">{profile.role}</p>
           <p className="mt-4 text-slate-600 leading-7">{profile.summary}</p>
           <div className="mt-6 flex gap-3">
-            <a className="btn-primary" href="src\assets\Roshani_Gaund_CV (1).pdf">View CV</a>
+            <a className="btn-primary" href="src\public\Roshani_Gaund_CV (1).pdf">View CV</a>
             <a className="btn-outline" href="#contact">Contact</a>
           </div>
         </div>

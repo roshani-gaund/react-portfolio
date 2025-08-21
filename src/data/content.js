@@ -1,7 +1,7 @@
-import roshaniImg from "../assets/roshani.jpg";
-import sswImg from "../assets/ssw.png";
-import ipodImg from "../assets/Screenshot 2025-08-17 192803.png";
-import ppf from "../assets/pf.png";
+import roshaniImg from "../public/roshani.jpg";
+import sswImg from "../public/ssw.png";
+import ipodImg from "../public/Screenshot 2025-08-17 192803.png";
+import ppf from "../public/pf.png";
 
 export const profile = {
   name: "Roshani Gaund",
