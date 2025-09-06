@@ -53,11 +53,11 @@ export default function Contact() {
             <li><strong>Location:</strong> {profile.location}</li>
           </ul>
           <div className="mt-4">
-            <a href="https://github.com/roshani-gaund">Github Profile</a>
+            <a href="https://github.com/roshani-gaund" style={{textDecoration:"underline",cursor:"pointer"}}>Github Profile</a>
           </div>
           <div className="mt-4">
 
-            <a href="https://linkedin.com/in/roshani-gaund-0a8152306"  >Linked In</a>
+            <a href="https://linkedin.com/in/roshani-gaund-0a8152306" style={{textDecoration:"underline",cursor:"pointer"}} >Linked In</a>
           </div>
         </Card>
       </div>
